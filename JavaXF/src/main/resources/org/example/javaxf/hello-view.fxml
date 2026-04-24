@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox alignment="CENTER" prefHeight="574.0" prefWidth="504.0" spacing="20.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.javaxf.EstudiantesController">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+
+    <Label fx:id="welcomeText" text="Mantenimiento estudiantes:">
+      <font>
+         <Font name="Arial" size="24.0" />
+      </font></Label>
+   <TableView fx:id="estudianteTableView" prefHeight="200.0" prefWidth="200.0">
+     <columns>
+       <TableColumn fx:id="niaTableColum" prefWidth="118.0" text="NIA" />
+       <TableColumn fx:id="nombreTableColum" prefWidth="169.0" text="Nombre" />
+         <TableColumn fx:id="fechaTableColum" prefWidth="176.0" text="Fecha nacimiento" />
+     </columns>
+   </TableView>
+   <HBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="200.0">
+      <children>
+         <Button fx:id="editarButton" alignment="TOP_CENTER" mnemonicParsing="false" onAction="#editarButton" text="Editar" textAlignment="CENTER" />
+          <Button fx:id="eliminarButton" onAction="#eliminarButton" text="Eliminar" textAlignment="CENTER" />
+      </children>
+   </HBox>
+   <Label fx:id="mensajeLabel" />
+   <TextField fx:id="introNIATextField" promptText="Introduce un NIA" />
+   <TextField fx:id="introNomTextField" promptText="Introduce un nombre ..." />
+   <DatePicker fx:id="fechaDatePicker" promptText="Fecha de nacimiento..." />
+   <HBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="200.0">
+      <children>
+         <Button fx:id="insertarButton" mnemonicParsing="false" onAction="#insertarButton" text="Insertar" />
+         <Button fx:id="guardarButton" disable="true" mnemonicParsing="false" onAction="#guardarButton" text="Guardar" />
+      </children>
+   </HBox>
+</VBox>
