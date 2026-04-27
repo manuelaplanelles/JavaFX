@@ -11,6 +11,7 @@ module org.example.javaxf {
     requires eu.hansolo.tilesfx;
     requires com.almasb.fxgl.all;
     requires java.sql;
+    requires java.desktop;
 
     opens org.example.javaxf to javafx.fxml;
     exports org.example.javaxf;
