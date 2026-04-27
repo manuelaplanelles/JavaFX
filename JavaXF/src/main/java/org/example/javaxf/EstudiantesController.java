@@ -73,7 +73,7 @@ public class EstudiantesController {
     public void insertarButton() {
         introNIATextField.getText();
         introNomTextField.getText();
-        Integer nomre =
+
     }
 
     public void guardarButton() {
