@@ -70,7 +70,7 @@ public class DatosEstudiantes {
         String query = "UPDATE estudiante SET nia = '"+estudiante.getNia()+"' , " +
                                             "nombre = '"+estudiante.getNombre()+"', " +
                                             "fecha_nacimiento = '"+estudiante.getFecha_nacimiento()+"' " +
-                                        "WHERE nia = '"+estudiante.getNombre()+"'";
+                                        "WHERE nia = '"+estudiante.getNia()+"'";
         Statement stmt;
 
         try {
@@ -80,8 +80,19 @@ public class DatosEstudiantes {
             System.out.println(e.getMessage());
             throw new RuntimeException(e);
         }
-
-
     }
 
+
+    public static void eliminar(Connection connection, Estudiante estudiante) {
+        String query = "DELETE FROM estudiante WHERE nia = '"+estudiante.getNia()+"'";
+        Statement stmt;
+
+        try {
+            stmt = connection.createStatement();
+            stmt.executeUpdate(query);
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+            throw new RuntimeException(e);
+        }
+    }
 }

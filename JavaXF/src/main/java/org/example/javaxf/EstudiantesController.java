@@ -9,6 +9,8 @@ import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
 
+import javax.swing.table.TableColumn;
+import javax.swing.text.TableView;
 import java.sql.Connection;
 import java.time.LocalDate;
 
@@ -56,9 +58,20 @@ public class EstudiantesController {
     }
 
     public void eliminarButton() {
+        Estudiante estudiante = estudianteTableView.getSelectionModel().getSelectedItem();
+        if (estudiante==null){
+            mensajeLabel.setText("No hay nadie seleccionado.");
+        }else{
+            DatosEstudiantes.eliminar(db,estudiante);
+            mensajeLabel.setText("Estudiante eliminado.");
+            estudianteTableView.setItems(DatosEstudiantes.consulta(db));
+        }
     }
 
     public void insertarButton() {
+        introNIATextField.getText();
+        introNomTextField.getText();
+        Integer nomre =
     }
 
     public void guardarButton() {
