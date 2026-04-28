@@ -1,18 +1,15 @@
 package org.example.javaxf;
-
-import javafx.beans.property.ReadOnlyListWrapper;
 import javafx.beans.property.ReadOnlyObjectWrapper;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.*;
-import javafx.scene.input.MouseEvent;
+import javafx.scene.control.Button;
+import javafx.scene.control.DatePicker;
+import javafx.scene.control.Label;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 
-import javax.swing.table.TableColumn;
-import javax.swing.text.TableView;
-import java.awt.*;
-import java.lang.classfile.Label;
 import java.sql.Connection;
 import java.time.LocalDate;
 
