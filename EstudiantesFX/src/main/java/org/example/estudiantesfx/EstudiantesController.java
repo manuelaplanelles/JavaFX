@@ -1,4 +1,4 @@
-package org.example.javafx;
+package org.example.estudiantesfx;
 
 import javafx.beans.property.ReadOnlyObjectWrapper;
 import javafx.beans.property.SimpleIntegerProperty;

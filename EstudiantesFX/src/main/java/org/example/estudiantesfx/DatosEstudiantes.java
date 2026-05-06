@@ -1,4 +1,4 @@
-package org.example.javafx;
+package org.example.estudiantesfx;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;

@@ -1,4 +1,4 @@
-package org.example.javafx;
+package org.example.estudiantesfx;
 
 import java.time.LocalDate;
 
