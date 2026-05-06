@@ -1,81 +1,119 @@
 package org.example;
 
-import java.io.File;
-import java.io.IOException;
+import java.io.*;
+import java.util.LinkedList;
+import java.util.Queue;
 import java.util.Scanner;
 
 public class Ficheros {
-    public static void main(String[] args) {
+    static Scanner teclado = new Scanner(System.in);
+    static void main() {
 
-        crearArchivo();
+//        File archivo = new File("src/main/resources/aprobados.txt"); //se ha creado un objeto, no es un archivo.
+//        try {
+//            if (archivo.createNewFile()){                             // con esta función si que creamos el archivo
+//                System.out.printf("Archivo creado");
+//            } else {
+//                System.out.printf("No se ha creado el archivo");
+//            }
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+//
+//        System.out.println(archivo.length());
+//        System.out.println(archivo.getAbsolutePath());
+//        System.out.printf(archivo.getName());
+//        if (archivo.exists()){
+//            archivo.delete();
+//        }
+//
+        File carpeta = new File("src/main/resources/archivos/aprobados");
+//        if (carpeta.mkdir()){
+//            System.out.printf("Carpeta creada.");
+//        }else {
+//            System.out.printf("No se ha creado la carpeta.");
+//        }
+//        crearArchivo();
 
-        File archivo = new File("src/main/resources/aprobados.txt"); //se ha creado un objeto, no es un archivo.
-
-        try {
-            if( archivo.createNewFile()){                       // con esta función si que creamos el archivo
-                System.out.println("Archivo creado");
-            }else{
-                System.out.println("No se ha creado el archivo");
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-
+        String nombre_fichero [] = carpeta.list();
+        for (String nombrecito : nombre_fichero){
+            System.out.printf(nombrecito);
         }
 
-        System.out.println(archivo.getName());
-        System.out.println(archivo.length());
-        System.out.println(archivo.getAbsolutePath());
-
-        if(archivo.exists()){
-            archivo.delete();
-        }
-
-        File carpeta = new File("src/main/resources/archivos");
-
-        if (carpeta.mkdir()){
-            System.out.println("Carpeta creada.");
-        }else{
-            System.out.println("La carpeta no creada.");
-        }
-
-        String nombre_ficheros[] = carpeta.list();
-        for(String nombrecito : nombre_ficheros){
-            System.out.println(nombrecito);
-        }
         File ficheros[] = carpeta.listFiles();
-        for(File ficherito : ficheros){
-            System.out.println(ficherito.getName() +" con tamaño "+ficherito.length());
+        for (File ficherito : ficheros){
+            System.out.printf(ficherito.getName() + " con tamaño " + ficherito.length());
         }
     }
 
-    public static void crearArchivo() {
-        Scanner teclado = new Scanner(System.in);
-        System.out.println("¿Cuántos archivos quieres crear?");
-        int numArchivos = teclado.nextInt();
-        teclado.nextLine();
+    public static void crearArchivo(){
+        System.out.printf("¿Cuántos archivos quieres crear?");
+        int numero = teclado.nextInt();
+        System.out.printf("¿En qué carpeta quieres crearlos?");
+        String donde = teclado.next();
 
-        System.out.println("¿En qué carpeta quieres crearlos?");
-        String rutaCarpeta = teclado.nextLine();
+        int contador = 0;
 
-        File carpeta = new File(rutaCarpeta);
-        if (!carpeta.exists()) {
-            carpeta.mkdirs();
-            System.out.println("Carpeta creada: " + rutaCarpeta);
-        }
+        for (int i = 0; i < numero; i++) {
+            System.out.printf("Nombre " + contador + ". txt");
 
-        for (int i = 1; i <= numArchivos; i++) {
-            File archivo = new File(carpeta, "nombre(" + i + ").txt");
-
+            File archivo = new File(donde + "/Nombre" + contador);
             try {
-                if (archivo.createNewFile()) {
-                    System.out.println("Creado: " + archivo.getName());
+                if (archivo.createNewFile()){
+                    System.out.printf("Archivo creado");
                 } else {
-                    System.out.println("Ya existe: " + archivo.getName());
+                    System.out.printf("No se ha creado el archivo");
                 }
             } catch (IOException e) {
                 e.printStackTrace();
             }
+            contador++;
+
         }
     }
+    public static void leerArchivo(){
 
+
+        try {
+            BufferedReader archivo1 = new BufferedReader(new FileReader("src/main/resources/archivos/archivo1.txt"));
+            BufferedReader archivo2 = new BufferedReader(new FileReader("src/main/resources/archivos/archivo2.txt"));
+            BufferedWriter resultado = new BufferedWriter(new FileWriter("src/main/resources/archivos/resultado.txt"));
+
+            String linea = "";
+            Queue<String> cola1 = new LinkedList<>();
+            while ((linea = archivo1.readLine()) != null){
+
+                String palabritas[] = linea.split(" ");
+                for (String palabra : palabritas){
+                }
+            }
+            Queue<String> cola2 = new LinkedList<>();
+
+            while ((linea = archivo1.readLine()) != null){
+                String palabritas[] = linea.split(" ");
+                for (String palabra : palabritas){
+                }
+            }
+
+            while (cola1.isEmpty() || cola2.isEmpty()){
+                resultado.write(cola1.poll() + " " + cola2.poll() + " ");
+            }
+
+            if (cola1.isEmpty()){
+                while (!cola2.isEmpty()){
+                    resultado.write(cola2.poll());
+                }
+            }else {
+                while (!cola1.isEmpty()){
+                    resultado.write(cola1.poll());
+                }
+            }
+
+
+
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
+    }
 }

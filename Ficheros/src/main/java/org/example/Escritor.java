@@ -1,13 +1,13 @@
 package org.example;
 
-import java.io.*;
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
 
 public class Escritor {
     static void main() {
-
-
         try {
-            BufferedWriter escritor =  new BufferedWriter(new FileWriter("src/main/resources/archivos/Nombre3.txt"));
+            BufferedWriter escritor = new BufferedWriter(new FileWriter("src/main/resources/archivos/aprobados/Nombre3.txt"));
 
             escritor.write("Hola, mundo!");
             escritor.newLine();
@@ -16,12 +16,13 @@ public class Escritor {
             escritor.close();
 
 
-
-
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
 
+    }
+
+    public static void actividad8 (){
 
     }
 }
