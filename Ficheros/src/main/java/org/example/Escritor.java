@@ -7,7 +7,7 @@ import java.io.IOException;
 public class Escritor {
     static void main() {
         try {
-            BufferedWriter escritor = new BufferedWriter(new FileWriter("src/main/resources/archivos/aprobados/Nombre3.txt"));
+            BufferedWriter escritor = new BufferedWriter(new FileWriter("Ficheros/src/main/resources/archivos/aprobados/Nombre3.txt"));
 
             escritor.write("Hola, mundo!");
             escritor.newLine();
@@ -19,10 +19,6 @@ public class Escritor {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-
-    }
-
-    public static void actividad8 (){
 
     }
 }

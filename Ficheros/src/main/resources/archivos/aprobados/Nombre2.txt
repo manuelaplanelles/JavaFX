@@ -1,5 +1,5 @@
-Patricia; 25; Profe
-Ismael; 20; Alumno
-Ivan; 25; Repartidor
-Alejandro; 26; Furbolista
-Manuela; 20; Gruista
+Patricia;25; Profe
+Ismael;20; Alumno
+Ivan;25; Repartidor
+Alejandro;26; Furbolista
+Manuela;20; Gruista

@@ -27,7 +27,7 @@ public class Ficheros {
 //            archivo.delete();
 //        }
 //
-        File carpeta = new File("src/main/resources/archivos/aprobados");
+        File carpeta = new File("Ficheros/src/main/resources/archivos");
 //        if (carpeta.mkdir()){
 //            System.out.printf("Carpeta creada.");
 //        }else {
@@ -75,9 +75,9 @@ public class Ficheros {
 
 
         try {
-            BufferedReader archivo1 = new BufferedReader(new FileReader("src/main/resources/archivos/archivo1.txt"));
-            BufferedReader archivo2 = new BufferedReader(new FileReader("src/main/resources/archivos/archivo2.txt"));
-            BufferedWriter resultado = new BufferedWriter(new FileWriter("src/main/resources/archivos/resultado.txt"));
+            BufferedReader archivo1 = new BufferedReader(new FileReader("Ficheros/src/main/resources/archivos/archivo1.txt"));
+            BufferedReader archivo2 = new BufferedReader(new FileReader("Ficheros/src/main/resources/archivos/archivo2.txt"));
+            BufferedWriter resultado = new BufferedWriter(new FileWriter("Ficheros/src/main/resources/archivos/resultado.txt"));
 
             String linea = "";
             Queue<String> cola1 = new LinkedList<>();

@@ -11,7 +11,7 @@ public class Lector {
 
     static void main(String[] args) throws FileNotFoundException {
         try {
-            BufferedReader lector = new BufferedReader(new FileReader("C:/Users/Ismael/Desktop/Programacion/Ficheros/src/main/resources/aprobados/Nombre1.txt"));
+            BufferedReader lector = new BufferedReader(new FileReader("Ficheros/src/main/resources/archivos/aprobados/Nombre2.txt"));
 
             String linea;
 
@@ -32,20 +32,19 @@ public class Lector {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-//        actividad1();
+//        buscador();
 //        verTexto();
 
     }
 
-    public static void actividad1(){
+    public static void buscador(){
         int contador = 0;
 
         System.out.printf("Que palabra quieers buscar:");
         String palabraBuscar = teclado.nextLine();
 
         try {
-            BufferedReader lector = new BufferedReader(new FileReader("C:/Users/Ismael/Desktop/Programacion/Ficheros/src/main/resources/aprobados/Nombre0.txt"));
-
+            BufferedReader lector = new BufferedReader(new FileReader("Ficheros/src/main/resources/archivos/aprobados/Nombre2.txt"));
             String linea;
 
             while ((linea = lector.readLine()) != null){
@@ -75,7 +74,7 @@ public class Lector {
     public static void verTexto() throws FileNotFoundException {
 
         try{
-            Scanner lector = new Scanner(new File("src/main/resources/archivos/aprobados/Nombre1.txt"));
+            Scanner lector = new Scanner(new File("Ficheros/src/main/resources/archivos/aprobados/Nombre2.txt"));
             while (lector.hasNextLine()){
                 String linea = lector.nextLine();
                 System.out.println(linea);
