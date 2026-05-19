@@ -1,4 +1,4 @@
-package videojuegos;
+package videojuegoJSON;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package videojuegos;
+package videojuegoJSON;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
